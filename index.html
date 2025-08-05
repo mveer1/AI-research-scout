@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Research Scout</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🔬</span>
+                <span class="logo-text">Smart Research Scout</span>
+            </div>
+            
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-tab="dashboard">Dashboard</button>
+                <button class="nav-tab" data-tab="search">Search</button>
+                <button class="nav-tab" data-tab="trends">Trends</button>
+                <button class="nav-tab" data-tab="history">History</button>
+                <button class="nav-tab" data-tab="profile">Profile</button>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-bar-header">
+                    <input type="text" placeholder="Quick search..." class="quick-search">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="user-info">
+                    <div class="user-stats">
+                        <span class="level">LVL 15</span>
+                        <span class="xp">2847 XP</span>
+                    </div>
+                    <div class="user-avatar">RS</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <div class="dashboard-grid">
+                <div class="welcome-section">
+                    <h1>Welcome back, Researcher!</h1>
+                    <p>Continue exploring the frontiers of knowledge</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 68%"></div>
+                        <span class="progress-text">Next Level: 153 XP to go</span>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📄</div>
+                        <div class="stat-content">
+                            <h3>2,341</h3>
+                            <p>Papers Found</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <h3>89</h3>
+                            <p>Trends Analyzed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <h3>156</h3>
+                            <p>Searches Performed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-content">
+                            <h3>420</h3>
+                            <p>Achievement Points</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon search">🔍</div>
+                            <div class="activity-content">
+                                <p><strong>Searched:</strong> machine learning in healthcare</p>
+                                <span class="activity-time">2 hours ago • 45 results</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon trend">📈</div>
+                            <div class="activity-content">
+                                <p><strong>Trending:</strong> quantum computing</p>
+                                <span class="activity-time">1 day ago • +15% growth</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon save">💾</div>
+                            <div class="activity-content">
+                                <p><strong>Saved:</strong> Deep Learning for Medical Diagnosis</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trending-topics">
+                    <h2>Trending Research Areas</h2>
+                    <div class="trending-list">
+                        <div class="trending-item">
+                            <div class="trending-info">
+                                <h3>AI in Healthcare</h3>
+                                <p>234 papers • 1,847 mentions</p>
+                            </div>
+                            <div class="trending-growth positive">+45%</div>
+                        </div>
+                        <div class="trending-item">
+                            <div class="trending-info">
+                                <h3>Quantum Computing</h3>
+                                <p>156 papers • 892 mentions</p>
+                            </div>
+                            <div class="trending-growth positive">+32%</div>
+                        </div>
+                        <div class="trending-item">
+                            <div class="trending-info">
+                                <h3>Climate Change ML</h3>
+                                <p>189 papers • 1,234 mentions</p>
+                            </div>
+                            <div class="trending-growth positive">+28%</div>
+                        </div>
+                        <div class="trending-item">
+                            <div class="trending-info">
+                                <h3>Federated Learning</h3>
+                                <p>98 papers • 567 mentions</p>
+                            </div>
+                            <div class="trending-growth positive">+22%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements-preview">
+                    <h2>Recent Achievements</h2>
+                    <div class="achievement-badges">
+                        <div class="achievement-badge earned">
+                            <div class="badge-icon">🎯</div>
+                            <div class="badge-info">
+                                <h4>First Search</h4>
+                                <p>10 XP</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge earned">
+                            <div class="badge-icon">📊</div>
+                            <div class="badge-info">
+                                <h4>Trend Spotter</h4>
+                                <p>25 XP</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge earned">
+                            <div class="badge-icon">📚</div>
+                            <div class="badge-info">
+                                <h4>Deep Researcher</h4>
+                                <p>50 XP</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge locked">
+                            <div class="badge-icon">🌟</div>
+                            <div class="badge-info">
+                                <h4>Data Explorer</h4>
+                                <p>75 XP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Tab -->
+        <div id="search" class="tab-content">
+            <div class="search-interface">
+                <div class="search-main">
+                    <h1>Discover Research</h1>
+                    <div class="search-box">
+                        <input type="text" id="main-search" placeholder="Enter your research topic or keywords...">
+                        <button class="search-button">Search</button>
+                    </div>
+                    
+                    <div class="search-options">
+                        <div class="sources-section">
+                            <h3>Data Sources</h3>
+                            <div class="source-checkboxes">
+                                <label><input type="checkbox" checked> ArXiv</label>
+                                <label><input type="checkbox" checked> PubMed</label>
+                                <label><input type="checkbox" checked> Semantic Scholar</label>
+                                <label><input type="checkbox"> Reddit</label>
+                                <label><input type="checkbox"> Twitter</label>
+                                <label><input type="checkbox"> Google Trends</label>
+                            </div>
+                        </div>
+                        
+                        <div class="filters-section">
+                            <h3>Filters</h3>
+                            <div class="filter-controls">
+                                <select class="form-control">
+                                    <option>All Categories</option>
+                                    <option>Computer Science</option>
+                                    <option>Medicine</option>
+                                    <option>Physics</option>
+                                    <option>Biology</option>
+                                </select>
+                                <select class="form-control">
+                                    <option>Last 30 days</option>
+                                    <option>Last 3 months</option>
+                                    <option>Last year</option>
+                                    <option>All time</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="toggle-section">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="eli5-toggle">
+                                <span class="toggle-slider"></span>
+                                <span class="toggle-label">Explain Like I'm 5</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search-sidebar">
+                    <div class="search-history">
+                        <h3>Recent Searches</h3>
+                        <div class="history-list">
+                            <div class="history-item">machine learning in healthcare</div>
+                            <div class="history-item">quantum computing applications</div>
+                            <div class="history-item">federated learning privacy</div>
+                            <div class="history-item">climate change AI solutions</div>
+                        </div>
+                    </div>
+                    
+                    <div class="search-suggestions">
+                        <h3>Popular Topics</h3>
+                        <div class="suggestion-tags">
+                            <span class="suggestion-tag">Deep Learning</span>
+                            <span class="suggestion-tag">Neural Networks</span>
+                            <span class="suggestion-tag">Quantum ML</span>
+                            <span class="suggestion-tag">Computer Vision</span>
+                            <span class="suggestion-tag">NLP</span>
+                            <span class="suggestion-tag">Robotics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="search-results hidden">
+                <div class="results-header">
+                    <h2>Search Results</h2>
+                    <div class="results-actions">
+                        <button class="btn btn--secondary">Export</button>
+                        <button class="btn btn--outline">Save Search</button>
+                    </div>
+                </div>
+                
+                <div class="results-tabs">
+                    <button class="results-tab active" data-results="papers">Research Papers</button>
+                    <button class="results-tab" data-results="social">Social Trends</button>
+                    <button class="results-tab" data-results="trends">Historical Trends</button>
+                </div>
+                
+                <div id="papers-results" class="results-content active">
+                    <div class="paper-card">
+                        <div class="paper-header">
+                            <h3>Deep Learning Applications in Medical Imaging: A Comprehensive Review</h3>
+                            <div class="paper-meta">
+                                <span class="authors">Smith, J. • Johnson, A. • Williams, R.</span>
+                                <span class="date">Jan 15, 2024</span>
+                                <span class="source">arXiv</span>
+                            </div>
+                        </div>
+                        <div class="paper-content">
+                            <p class="abstract">This comprehensive review explores the current state and future prospects of deep learning applications in medical imaging, covering convolutional neural networks, transfer learning, and emerging architectures...</p>
+                            <div class="paper-tags">
+                                <span class="tag">deep learning</span>
+                                <span class="tag">medical imaging</span>
+                                <span class="tag">CNN</span>
+                                <span class="tag">healthcare AI</span>
+                            </div>
+                        </div>
+                        <div class="paper-footer">
+                            <div class="paper-stats">
+                                <span class="citations">156 citations</span>
+                                <span class="relevance">94% relevance</span>
+                            </div>
+                            <div class="paper-actions">
+                                <button class="btn btn--sm btn--outline">Save</button>
+                                <button class="btn btn--sm btn--secondary">Summary</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="paper-card">
+                        <div class="paper-header">
+                            <h3>Quantum Machine Learning: Current Progress and Future Directions</h3>
+                            <div class="paper-meta">
+                                <span class="authors">Chen, L. • Anderson, K. • Brown, M.</span>
+                                <span class="date">Jan 12, 2024</span>
+                                <span class="source">Nature</span>
+                            </div>
+                        </div>
+                        <div class="paper-content">
+                            <p class="abstract">Quantum machine learning represents a promising intersection of quantum computing and artificial intelligence. This paper reviews recent advances in quantum algorithms for machine learning tasks...</p>
+                            <div class="paper-tags">
+                                <span class="tag">quantum computing</span>
+                                <span class="tag">machine learning</span>
+                                <span class="tag">quantum algorithms</span>
+                            </div>
+                        </div>
+                        <div class="paper-footer">
+                            <div class="paper-stats">
+                                <span class="citations">89 citations</span>
+                                <span class="relevance">87% relevance</span>
+                            </div>
+                            <div class="paper-actions">
+                                <button class="btn btn--sm btn--outline">Save</button>
+                                <button class="btn btn--sm btn--secondary">Summary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="social-results" class="results-content">
+                    <div class="social-card">
+                        <div class="social-header">
+                            <div class="platform-icon twitter">🐦</div>
+                            <div class="social-meta">
+                                <span class="platform">Twitter</span>
+                                <span class="time">3 hours ago</span>
+                                <span class="trending-badge">Trending</span>
+                            </div>
+                        </div>
+                        <div class="social-content">
+                            <p>Breakthrough in quantum computing could revolutionize AI research...</p>
+                            <div class="social-stats">
+                                <span class="engagement">2,847 engagements</span>
+                                <span class="sentiment positive">Positive sentiment</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-card">
+                        <div class="social-header">
+                            <div class="platform-icon reddit">🔴</div>
+                            <div class="social-meta">
+                                <span class="platform">Reddit</span>
+                                <span class="time">5 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="social-content">
+                            <p>Discussion: Latest developments in federated learning privacy</p>
+                            <div class="social-stats">
+                                <span class="engagement">1,456 engagements</span>
+                                <span class="sentiment neutral">Neutral sentiment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="trends-results" class="results-content">
+                    <div class="chart-container" style="position: relative; height: 400px;">
+                        <canvas id="trendsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trends Tab -->
+        <div id="trends" class="tab-content">
+            <div class="trends-dashboard">
+                <h1>Research Trends Analysis</h1>
+                <div class="trends-grid">
+                    <div class="trend-chart-container">
+                        <h2>Topic Popularity Over Time</h2>
+                        <div class="chart-container" style="position: relative; height: 350px;">
+                            <canvas id="mainTrendsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="trend-heatmap">
+                        <h2>Research Areas Heatmap</h2>
+                        <div class="heatmap-grid">
+                            <div class="heatmap-cell high">AI/ML</div>
+                            <div class="heatmap-cell medium">Quantum</div>
+                            <div class="heatmap-cell high">Healthcare</div>
+                            <div class="heatmap-cell low">Robotics</div>
+                            <div class="heatmap-cell medium">Climate</div>
+                            <div class="heatmap-cell high">Computer Vision</div>
+                            <div class="heatmap-cell low">NLP</div>
+                            <div class="heatmap-cell medium">Security</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="history" class="tab-content">
+            <div class="history-dashboard">
+                <h1>Search History</h1>
+                <div class="history-filters">
+                    <select class="form-control">
+                        <option>All Time</option>
+                        <option>This Week</option>
+                        <option>This Month</option>
+                    </select>
+                    <select class="form-control">
+                        <option>All Sources</option>
+                        <option>Papers Only</option>
+                        <option>Trends Only</option>
+                    </select>
+                </div>
+                
+                <div class="history-timeline">
+                    <div class="history-entry">
+                        <div class="history-date">Today, 2:30 PM</div>
+                        <div class="history-search">
+                            <h3>machine learning in healthcare</h3>
+                            <p>Found 45 papers, 12 social mentions</p>
+                            <button class="btn btn--sm btn--outline">Repeat Search</button>
+                        </div>
+                    </div>
+                    
+                    <div class="history-entry">
+                        <div class="history-date">Yesterday, 10:15 AM</div>
+                        <div class="history-search">
+                            <h3>quantum computing applications</h3>
+                            <p>Found 67 papers, 8 social mentions</p>
+                            <button class="btn btn--sm btn--outline">Repeat Search</button>
+                        </div>
+                    </div>
+                    
+                    <div class="history-entry">
+                        <div class="history-date">2 days ago, 4:45 PM</div>
+                        <div class="history-search">
+                            <h3>federated learning privacy</h3>
+                            <p>Found 23 papers, 15 social mentions</p>
+                            <button class="btn btn--sm btn--outline">Repeat Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Tab -->
+        <div id="profile" class="tab-content">
+            <div class="profile-dashboard">
+                <div class="profile-header">
+                    <div class="profile-avatar-large">RS</div>
+                    <div class="profile-info">
+                        <h1>Research Scout</h1>
+                        <p>Level 15 Explorer • 2,847 XP</p>
+                        <div class="level-progress">
+                            <div class="progress-bar-large">
+                                <div class="progress-fill-large" style="width: 68%"></div>
+                            </div>
+                            <span class="next-level">Next Level: 153 XP to go</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-grid">
+                    <div class="achievements-full">
+                        <h2>Achievements</h2>
+                        <div class="achievements-grid">
+                            <div class="achievement-card earned">
+                                <div class="achievement-icon">🎯</div>
+                                <h3>First Search</h3>
+                                <p>Performed your first research query</p>
+                                <span class="achievement-points">10 XP</span>
+                            </div>
+                            
+                            <div class="achievement-card earned">
+                                <div class="achievement-icon">📊</div>
+                                <h3>Trend Spotter</h3>
+                                <p>Identified 5 trending research topics</p>
+                                <span class="achievement-points">25 XP</span>
+                            </div>
+                            
+                            <div class="achievement-card earned">
+                                <div class="achievement-icon">📚</div>
+                                <h3>Deep Researcher</h3>
+                                <p>Saved 50 research papers</p>
+                                <span class="achievement-points">50 XP</span>
+                            </div>
+                            
+                            <div class="achievement-card locked">
+                                <div class="achievement-icon">🌟</div>
+                                <h3>Data Explorer</h3>
+                                <p>Used all available data sources</p>
+                                <span class="achievement-points">75 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-preferences">
+                        <h2>Preferences</h2>
+                        <div class="preference-groups">
+                            <div class="preference-group">
+                                <h3>Default Sources</h3>
+                                <label><input type="checkbox" checked> ArXiv</label>
+                                <label><input type="checkbox" checked> PubMed</label>
+                                <label><input type="checkbox"> Reddit</label>
+                                <label><input type="checkbox"> Twitter</label>
+                            </div>
+                            
+                            <div class="preference-group">
+                                <h3>Notifications</h3>
+                                <label><input type="checkbox" checked> New trending topics</label>
+                                <label><input type="checkbox"> Daily digest</label>
+                                <label><input type="checkbox" checked> Achievement updates</label>
+                            </div>
+                            
+                            <div class="preference-group">
+                                <h3>API Configuration</h3>
+                                <div class="api-keys">
+                                    <input type="password" placeholder="OpenAI API Key" class="form-control">
+                                    <input type="password" placeholder="Semantic Scholar API Key" class="form-control">
+                                    <button class="btn btn--primary">Save Keys</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner"></div>
+        <p>Searching the research frontier...</p>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
